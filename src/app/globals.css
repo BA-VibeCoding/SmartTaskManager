@@ -23,7 +23,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tightest;
+    @apply tracking-tightest leading-none;
   }
 }
 
@@ -31,6 +31,18 @@
   .surface-card {
     @apply bg-[var(--surface)] border border-[var(--accent-border)] rounded-xl shadow-sm;
   }
+
+  .interactive-button {
+    @apply transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-30 disabled:grayscale disabled:cursor-not-allowed disabled:scale-100 disabled:active:scale-100;
+  }
+}
+
+* {
+  @apply focus:outline-none focus:ring-2 focus:ring-primaryAction/20 focus:ring-offset-0;
+}
+
+.dark * {
+  @apply focus:ring-white/20;
 }
 
 .custom-scrollbar::-webkit-scrollbar {

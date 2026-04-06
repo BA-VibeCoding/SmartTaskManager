@@ -176,15 +176,16 @@ export default function TaskFormModal({
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 py-4 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-2xl font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition-all"
+              className="flex-1 py-4 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-2xl font-bold uppercase tracking-widest text-xxs hover:bg-slate-200 dark:hover:bg-slate-700 transition-all hover:scale-[0.98] active:scale-95"
             >
-              Discard Changes
+              Abort sequence
             </button>
             <button
               type="submit"
-              className="flex-2 py-4 bg-primaryAction text-white rounded-2xl font-black hover:opacity-90 transition-all shadow-xl shadow-primaryAction/20"
+              disabled={!title.trim()}
+              className="flex-[2] py-4 bg-primaryAction text-white dark:bg-white dark:text-primaryAction rounded-2xl font-black uppercase tracking-widest text-xxs hover:opacity-90 transition-all shadow-xl shadow-primaryAction/20 dark:shadow-none hover:scale-[1.02] active:scale-95 disabled:opacity-30 disabled:grayscale disabled:cursor-not-allowed disabled:hover:scale-100 disabled:active:scale-100"
             >
-              {initialTask ? "Commit Changes" : "Deploy Task"}
+              {initialTask ? "Update vector data" : "Initialize focus profile"}
             </button>
           </div>
         </form>
