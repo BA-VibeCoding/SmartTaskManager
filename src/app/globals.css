@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-manrope: 'Manrope', sans-serif;
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --foreground: #1A1C1E;
+  --accent-border: #E2E8F0;
+}
+
+.dark {
+  --background: #0F172A;
+  --surface: #1E293B;
+  --foreground: #F8FAFC;
+  --accent-border: #334155; /* Slate 700 */
+}
+
+@layer base {
+  body {
+    @apply font-manrope bg-[var(--background)] text-[var(--foreground)] antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tightest;
+  }
+}
+
+@layer components {
+  .surface-card {
+    @apply bg-[var(--surface)] border border-[var(--accent-border)] rounded-xl shadow-sm;
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 dark:bg-slate-800 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-300 dark:bg-slate-700;
+}
